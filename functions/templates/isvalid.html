@@ -1,0 +1,30 @@
+
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="w3-display-middle">
+    <div class="mb-3">
+      <form action="/resultisvalid" method="POST" enctype="multipart/form-data">  
+        {% csrf_token %}
+        <center>
+      <label for="exampleFormControlTextarea1" class="form-label" >ENTER SEQ</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" cols="100" name="num1"></textarea>
+      <label for="exampleFormControlTextarea1" class="form-label">ENTER TYPE</label>
+      <select class="form-control" name="num2">
+        <option value="protein">protein</option>
+        <option value="rna">rna</option>
+        <option value="dna">dna</option>
+      </select>
+
+      <button type="submit" class="btn btn-primary">SEND</button>
+    </center>
+</form>
+    </div>  
+  </div>
+
+
+{% endblock content %}

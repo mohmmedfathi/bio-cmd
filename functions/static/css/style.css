@@ -1,0 +1,216 @@
+body {
+    background: #966060;
+    margin-top: 2rem;
+}
+/*PEN STYLES*/
+.weather-app {
+    background: #fff;
+    color: #444;
+    max-width: 375px;
+    margin: 0 auto;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    box-sizing: border-box;
+    padding: 10px;
+    overflow: hidden;
+    position: relative;
+}
+.weather-app .date-time {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #959595;
+    padding-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+    font-size: 94%;
+}
+.weather-app .time {
+    font: 5.5em/0.8em "Roboto";
+    float: left;
+    overflow: hidden;
+}
+.weather-app .time span {
+    font-size: 0.15em;
+    font-weight: bold;
+    line-height: 1.25em;
+    vertical-align: top;
+}
+.weather-app .date {
+    float: left;
+    margin-left: 2.25%;
+    margin-top: 30px;
+}
+.weather-app .date .day {
+    font-family: "Roboto";
+    font-weight: bold;
+}
+.weather-app .weather-icon {
+    color: #999;
+    font-size: 2.25em;
+    line-height: 1.5em;
+    z-index: 1;
+   /*POSITION*/
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+.weather-app .location-weather, .weather-app .weather-temp {
+    font-size: 90%;
+}
+.weather-app .location-weather {
+   /*POSITION*/
+    position: relative;
+}
+.weather-app .location-weather label {
+    position: absolute;
+    left: -1px;
+    top: -5px;
+   /*TRANSITION*/
+    transition: left 0.3s ease;
+}
+.weather-app .location-weather label.hovered > .set-icon {
+    color: #999;
+}
+.weather-app .location-weather label:hover, .weather-app .location-weather label.hovered {
+    left: 1px;
+}
+.weather-app .location-weather label:hover ~ .weather-status, .weather-app .location-weather label.hovered ~ .weather-status {
+    margin-left: 10px;
+    max-width: 208px;
+}
+.weather-app .location-weather .set-icon {
+    color: #959595;
+    cursor: pointer;
+    font-size: 1.5em;
+    float: left;
+    line-height: 1.5em;
+    padding: 0 5px 0 0;
+   /*TRANSITION*/
+    transition: color 0.2s ease;
+}
+.weather-app .location-weather .set-icon:hover {
+    color: #999;
+}
+.weather-app .location-weather .weather-status {
+    float: left;
+    overflow: hidden;
+    margin-left: 8px;
+    max-width: 210px;
+    width: 65%;
+    position: relative;
+   /*TRANSITION*/
+    transition: all 0.3s ease;
+}
+.weather-app .location-weather .userCity {
+    border: none;
+    box-sizing: border-box;
+    border-bottom: 1px solid #1e90ff;
+    font-size: 1.25em;
+    padding: 0 0 5px 5px;
+    width: 100%;
+    visibility: hidden;
+   /*POSITION*/
+    position: absolute;
+    top: 0;
+}
+.weather-app .location-weather .userCity:focus {
+    outline: none;
+    visibility: visible;
+}
+.weather-app .location-weather #xBxHack {
+    display: none;
+}
+.weather-app .location-weather #xBxHack:checked ~ .userCity {
+    visibility: visible;
+}
+.weather-app .location-weather #xBxHack:checked ~ .city, .weather-app .location-weather #xBxHack:checked ~ .forcast {
+    visibility: hidden;
+}
+.weather-app .location-weather .city {
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 1.25em;
+    line-height: 0.9em;
+    cursor: pointer;
+}
+.weather-app .location-weather .forcast {
+    font-size: 0.9em;
+    color: #999;
+    text-transform: capitalize;
+}
+.weather-app .weather-temp {
+    float: right;
+    overflow: hidden;
+    margin-top: -1px;
+}
+.weather-app .weather-temp .temperature {
+    color: #1e90ff;
+    float: left;
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 2.7em;
+    line-height: 1em;
+    margin-right: 5px;
+    margin-top: -5px;
+}
+.weather-app .weather-temp .temperature:after {
+    content: "\00b0";
+    font-size: 0.7em;
+    font-family: Roboto;
+    line-height: 1.25em;
+    vertical-align: text-top;
+}
+.weather-app .weather-temp .high-low {
+    color: #999;
+    font-family: Roboto;
+    line-height: 1.2em;
+    float: right;
+    text-align: right;
+}
+.weather-app .weather-temp .high-low .high:after, .weather-app .weather-temp .high-low .low:after {
+    content: "\00b0";
+    font-size: 0.7em;
+    font-family: Roboto;
+    line-height: 1.25em;
+    vertical-align: text-top;
+}
+@media screen and (min-width: 380px) {
+    .weather-app .weather-icon {
+        color: #fff;
+   }
+    .weather-app .weather-icon:after {
+        background: #444;
+        border-radius: 50%;
+        border: 3px solid #1e90ff;
+        content: "";
+        height: 160px;
+        width: 160px;
+        position: absolute;
+        top: -90px;
+        right: -90px;
+        z-index: -1;
+   }
+    .weather-app .date-time {
+        font-size: 100%;
+   }
+    .weather-app .location-weather label:hover ~ .weather-status {
+        max-width: 233px;
+   }
+    .weather-app .location-weather .weather-status {
+        max-width: 235px;
+        width: 100%;
+   }
+    .weather-app .high-low .high:before, .weather-app .high-low .low:before {
+        font-size: 0.7em;
+        font-weight: bold;
+        text-transform: uppercase;
+        vertical-align: middle;
+        text-align: left;
+   }
+    .weather-app .high-low .high:before {
+        content: "high: ";
+   }
+    .weather-app .high-low .low:before {
+        content: "low: ";
+   }
+}

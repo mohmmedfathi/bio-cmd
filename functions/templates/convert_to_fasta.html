@@ -1,0 +1,21 @@
+
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="w3-display-middle">
+    <div class="mb-3">
+      <form action="/rconverttofasta" method="POST" enctype="multipart/form-data">  
+        {% csrf_token %}
+    <center>
+        <label for="exampleFormControlTextarea1" class="form-label">ENTER PATH FILE:</label>
+        <textarea type="text" class="form-control" name="file" cols="100" rows="2"></textarea>
+        <br>
+        <button type="submit" class="btn btn-primary">SEND</button>
+    </center>
+</form>
+    </div>  
+  </div>
+  {% endblock content %}

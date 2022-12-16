@@ -1,0 +1,27 @@
+
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="w3-display-middle">
+    <div class="mb-3">
+      <form action="/rmergefasta" method="POST" enctype="multipart/form-data">  
+        {% csrf_token %}
+        <center>
+      <label for="exampleFormControlTextarea1" class="form-label">ENTER File 1 :</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" cols="100" name="seq1"></textarea>
+
+      <label for="exampleFormControlTextarea1" class="form-label" >ENTER File 2 :</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" cols="100" name="seq2"></textarea>
+      <label for="exampleFormControlTextarea1" class="form-label" >ENTER Output File:</label>
+      <input type="text" class="form-control" name="file">
+      <br>
+      <button type="submit" class="btn btn-primary">SEND</button>
+    </center>
+</form>
+    </div>  
+  </div>
+  {% endblock content %}
+
